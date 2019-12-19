@@ -1,0 +1,33 @@
+@import "config/variables";
+
+/**
+
+// TIP
+
+    here we add bootstrap as a package, specifically the css part
+    it's imported as raw sass code, with default variables and mixins. 
+    webpack sass loader will compile it together with our written sass code
+    the variables file comes before you bootstrap, if you have some 
+    default bootstrap variables you want to change up, i'll show how
+
+ **/
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "config/mixins";
+
+/**
+ these below are modules of our css code. 
+ instead of adding multiple css files to main document,
+ or having one large bulky css file, we can keep them in 
+ small files, each serving a purpose, then we add them
+ all here. this is one of the good things about sass.
+ 
+ this is the main sass file that is imported into 
+ webpack. this is the beaity of using sass with webpack. 
+ haha
+
+ */
+
+@import "components/base";
+@import "components/todo";

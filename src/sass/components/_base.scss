@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  // note the use of a mixin here, to change body font
+  @include font-1;
+  font-weight: 500;
+  &,
+  #app {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/**
+
+// TIP
+ above rule translates to:
+
+body, body #app{
+  display: flex;
+  flex-direction: column;
+}
+
+
+**/

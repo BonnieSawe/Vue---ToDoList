@@ -1,0 +1,24 @@
+/**
+
+// TIP
+
+here we add mixins,
+they are like predefined sets of rules that can be re-used anywhere, 
+instead of writing repetitive code. 
+
+in this case, we add font-family properties for the two fonts imported,
+then we can re-use this elsewhere.
+
+the good thing about this is, if we ever decide to change fonts, all we have
+to do is go to _variables.scss file and change the values. the change will be
+effected elsewhere. imagine how much work this would involve with normal css.
+
+**/
+
+@mixin font-1 {
+  font-family: $font-1 !important;
+}
+
+@mixin font-2 {
+  font-family: $font-2 !important;
+}

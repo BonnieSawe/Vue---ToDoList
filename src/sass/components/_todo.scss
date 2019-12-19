@@ -1,0 +1,35 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px 20px;
+  border-radius: 5px;
+
+  &:hover {
+    background: salmon;
+    color: white;
+  }
+
+  .todo-text {
+    // note inclusion of secondary font here..
+    @include font-2;
+    margin: 0;
+  }
+
+  &.is-complete {
+    background: #e6e6e6;
+    color: grey;
+    font-style: italic;
+  }
+}
+
+.form-group.custom-checkbox {
+  display: flex;
+  margin: 0;
+  .form-control {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

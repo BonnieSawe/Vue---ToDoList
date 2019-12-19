@@ -1,8 +1,25 @@
 <template>
-  <div>
+  <div class="mb-5">
     <form @submit.prevent="addTodo">
-      <input type="text" v-model="title" name="title" placeholder="Add Todo...">
-      <input type="submit" value="Submit" class="btn">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          v-model="title"
+          name="title"
+          placeholder="Add Todo..."
+        />
+      </div>
+      <!-- 
+
+      // TIP
+
+      for the button/input, we can disable it if there is no input, to avoid adding empty todos
+      instead of complicated validation, we'll use a computed property called isNull, which checks
+      the `title` value and returns true if it is empty
+      
+      -->
+      <input :disabled="isNull" type="submit" value="Submit" class="btn btn-primary btn-block" />
     </form>
   </div>
 </template>
@@ -13,7 +30,12 @@ export default {
   name: "AddTodo",
   data() {
     return {
-      title: ''
+      title: ""
+    };
+  },
+  computed: {
+    isNull() {
+      return this.title === "";
     }
   },
   methods: {
@@ -21,17 +43,18 @@ export default {
       const newTodo = {
         title: this.title,
         completed: false
-      }
+      };
       // Send up to parent
-      this.$emit('add-todo', newTodo);
+      this.$emit("add-todo", newTodo);
 
-      this.title = '';
+      this.title = "";
     }
   }
-}
+};
 </script>
 
 <style scoped>
+/*
   form {
     display: flex;
   }
@@ -44,6 +67,8 @@ export default {
   input[type="submit"] {
     flex: 2;
   }
+
+  */
 </style>
 
 

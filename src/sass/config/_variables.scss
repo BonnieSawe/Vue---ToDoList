@@ -1,0 +1,16 @@
+/*
+// TIP
+this file is the first file to be processed when sass compiles to css
+here, you can add variables that will change the outlook of your front-end design
+anything that bootstrap has a variable for, can be overridden here
+
+
+***
+you can also import your fonts here
+
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Courier+Prime:400,700|Montserrat:300,400,500,600,700&display=swap");
+
+$font-1: "Montserrat", sans-serif;
+$font-2: "Courier Prime", monospace;
